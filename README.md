@@ -67,7 +67,7 @@ Table: **documents**
 
 git clone https://github.com/srijankishu/Assignment.git
 
-cd <repo-folder-name>
+cd Assignment
 
 
 ---
