@@ -148,7 +148,7 @@ curl -X POST http://localhost:5000/documents/upload \
   -F "file=@yourfile.pdf"
 ```
 
-1-Open Postman
+1- Open Postman
 
 2- Create a POST request: http://localhost:5000/documents/upload
 
@@ -172,11 +172,11 @@ curl -X POST http://localhost:5000/documents/upload \
 
    Postman
 
-    1- Method: GET
+  1- Method: GET
 
-    2- URL: http://localhost:5000/documents
+  2- URL: http://localhost:5000/documents
 
-    3- Click Send
+  3- Click Send
 
        You will receive a JSON list of uploaded documents.
 
@@ -188,15 +188,15 @@ curl -X POST http://localhost:5000/documents/upload \
    #### cURL
   ```
   
-    Postman
+  Postman
 
-     1-Method: GET
+  1- Method: GET
 
-     2- URL: http://localhost:5000/documents/<id>
+  2- URL: http://localhost:5000/documents/<id>
 
-     3- Click Send
+  3- Click Send
 
-     4- Postman will download the PDF file.
+  4- Postman will download the PDF file.
 
  ### 🗑 4. Delete a Document
 
@@ -206,14 +206,15 @@ curl -X POST http://localhost:5000/documents/upload \
    #### cURL
   ```
 
-    Postman
+  Postman
 
-    Method: DELETE
+  1- Method: DELETE
 
-    URL: http://localhost:5000/documents/<id>
+  2- URL: http://localhost:5000/documents/<id>
 
-    Click Send
-    A success message will appear:
+  3- Click Send
+
+     A success message will appear:
 
     { "message": "Document deleted successfully" }
 
