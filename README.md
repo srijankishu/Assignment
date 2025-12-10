@@ -162,7 +162,7 @@ curl -X POST http://localhost:5000/documents/upload \
 
 5- Click Send
 
-### 2. Get All Documents
+### 📄 2. Get All Documents
 
   #### cURL
   ```sh
@@ -180,7 +180,7 @@ curl -X POST http://localhost:5000/documents/upload \
 
        You will receive a JSON list of uploaded documents.
 
- ### 3. Download a Document
+ ### 📥 3. Download a Document
 
    #### cURL
   ```sh
@@ -198,7 +198,7 @@ curl -X POST http://localhost:5000/documents/upload \
 
      4- Postman will download the PDF file.
 
-4. Delete a Document
+ ### 🗑 4. Delete a Document
 
   #### cURL
   ```sh
