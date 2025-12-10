@@ -94,13 +94,12 @@ Backend runs at:
 
 # 🎨 Frontend Setup
 
-
-Frontend runs at:
-
 cd frontend
 cd vite-project
 npm install
 npm run dev
+
+Frontend runs at:
 
 👉 **http://localhost:5173**
 
