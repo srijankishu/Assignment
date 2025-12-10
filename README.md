@@ -66,7 +66,9 @@ Table: **documents**
 ## 1️⃣ Clone the Repository
 
 git clone https://github.com/srijankishu/Assignment.git
-cd your-repo-folder
+
+cd <repo-folder-name>
+
 
 ---
 
