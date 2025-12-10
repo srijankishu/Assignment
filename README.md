@@ -194,7 +194,7 @@ curl -X POST http://localhost:5000/documents/upload \
 
   1- Method: GET
 
-  2- URL: http://localhost:5000/documents/<id>
+  2- URL: http://localhost:5000/documents/:id
 
   3- Click Send
 
