@@ -2,9 +2,19 @@ import { useEffect, useState } from "react";
 import api from "./api";
 import UploadForm from "./components/UploadForm";
 import DocumentList from "./components/DocumentList";
+import Toast from "./components/Toast";
 
 function App() {
   const [documents, setDocuments] = useState([]);
+  const [toast, setToast] = useState({ show: false, message: "", type: "" });
+
+  const showToast = (message, type = "success") => {
+    setToast({ show: true, message, type });
+
+    setTimeout(() => {
+      setToast({ show: false, message: "", type: "" });
+    }, 3000);
+  };
 
   const fetchDocuments = async () => {
     const res = await api.get("/documents");
@@ -33,15 +43,21 @@ function App() {
         <div className="w-full max-w-3xl">
           
           {/* Upload Section */}
-          <UploadForm refreshDocuments={fetchDocuments} />
+          <UploadForm refreshDocuments={fetchDocuments} showToast={showToast} />
 
           {/* Document List */}
           <DocumentList
             documents={documents}
             refreshDocuments={fetchDocuments}
+            showToast={showToast}
           />
         </div>
       </main>
+
+      {/* TOAST */}
+      {toast.show && (
+        <Toast message={toast.message} type={toast.type} />
+      )}
 
       {/* FOOTER */}
       <footer className="mt-auto py-4 text-center text-gray-500 text-sm">

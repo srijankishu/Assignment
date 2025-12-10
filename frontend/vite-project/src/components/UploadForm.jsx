@@ -1,12 +1,12 @@
 import { useState } from "react";
 import api from "../api";
 
-function UploadForm({ refreshDocuments }) {
+function UploadForm({ refreshDocuments, showToast }) {
   const [file, setFile] = useState(null);
 
   const handleUpload = async () => {
     if (!file) {
-      alert("Please select a PDF file");
+      showToast("Please select a PDF file", "error");
       return;
     }
 
@@ -18,11 +18,11 @@ function UploadForm({ refreshDocuments }) {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
-      alert("Uploaded successfully!");
+      showToast("Uploaded successfully!", "success");
       setFile(null);
       refreshDocuments();
     } catch (err) {
-      alert("Upload failed!");
+      showToast("Upload failed!", "error");
     }
   };
 

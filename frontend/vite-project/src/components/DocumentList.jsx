@@ -1,7 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import api from "../api";
+import ConfirmDeleteModal from "./ConfirmDeleteModal";
 
-function DocumentList({ documents, refreshDocuments }) {
+function DocumentList({ documents, refreshDocuments, showToast }) {
+  const [showModal, setShowModal] = useState(false);
+  const [deleteId, setDeleteId] = useState(null);
+
+  // OPEN MODAL
+  const handleDeleteClick = (id) => {
+    setDeleteId(id);
+    setShowModal(true);
+  };
+
+  // CONFIRM DELETE
+  const confirmDelete = async () => {
+    try {
+      await api.delete(`/documents/${deleteId}`);
+      showToast("Document deleted", "success");
+      refreshDocuments();
+    } catch (err) {
+      showToast("Delete failed!", "error");
+    }
+
+    setShowModal(false);
+    setDeleteId(null);
+  };
+
+  // CANCEL MODAL
+  const cancelDelete = () => {
+    setShowModal(false);
+    setDeleteId(null);
+  };
 
   const handleDownload = async (id) => {
     const response = await api.get(`/documents/${id}`, {
@@ -21,13 +50,6 @@ function DocumentList({ documents, refreshDocuments }) {
   const handleView = (doc) => {
     const url = `http://localhost:5000/uploads/${doc.filename}`;
     window.open(url, "_blank");
-  };
-
-  const handleDelete = async (id) => {
-    if (!confirm("Are you sure you want to delete this file?")) return;
-
-    await api.delete(`/documents/${id}`);
-    refreshDocuments();
   };
 
   return (
@@ -55,7 +77,6 @@ function DocumentList({ documents, refreshDocuments }) {
 
               {/* ACTION BUTTONS */}
               <div className="flex gap-3">
-
                 <button
                   onClick={() => handleView(doc)}
                   className="px-3 py-1 bg-green-600 text-white rounded-md hover:bg-green-700 transition"
@@ -71,17 +92,23 @@ function DocumentList({ documents, refreshDocuments }) {
                 </button>
 
                 <button
-                  onClick={() => handleDelete(doc.id)}
+                  onClick={() => handleDeleteClick(doc.id)}
                   className="px-3 py-1 bg-red-500 text-white rounded-md hover:bg-red-600 transition"
                 >
                   Delete
                 </button>
-
               </div>
             </div>
           ))}
         </div>
       )}
+
+      {/* CONFIRM DELETE MODAL */}
+      <ConfirmDeleteModal
+        show={showModal}
+        onConfirm={confirmDelete}
+        onCancel={cancelDelete}
+      />
     </div>
   );
 }
