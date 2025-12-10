@@ -94,9 +94,9 @@ Backend runs at:
 
 # 🎨 Frontend Setup
 
-cd frontend
-cd vite-project
-npm install
+cd frontend \
+cd vite-project \
+npm install \
 npm run dev
 
 Frontend runs at:
