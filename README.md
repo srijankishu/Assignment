@@ -74,9 +74,11 @@ cd Assignment
 
 # 🛠 Backend Setup
 
+ ```sh
 cd backend \
 npm install \
 npm run dev
+```
 
 Backend runs at:
 
@@ -94,10 +96,12 @@ Backend runs at:
 
 # 🎨 Frontend Setup
 
+ ```sh
 cd frontend \
 cd vite-project \
 npm install \
 npm run dev
+ ```
 
 Frontend runs at:
 
@@ -167,7 +171,6 @@ curl -X POST http://localhost:5000/documents/upload \
   #### cURL
   ```sh
    curl http://localhost:5000/documents
-   #### cURL
   ```
 
    Postman
@@ -185,7 +188,6 @@ curl -X POST http://localhost:5000/documents/upload \
    #### cURL
   ```sh
    curl -X GET http://localhost:5000/documents/1 -o downloaded.pdf
-   #### cURL
   ```
   
   Postman
@@ -203,7 +205,6 @@ curl -X POST http://localhost:5000/documents/upload \
   #### cURL
   ```sh
   curl -X DELETE http://localhost:5000/documents/1
-   #### cURL
   ```
 
   Postman
