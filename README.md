@@ -74,6 +74,10 @@ cd Assignment
 
 # 🛠 Backend Setup
 
+cd backend \
+npm install \
+npm run dev
+
 Backend runs at:
 
 👉 **http://localhost:5000**
@@ -92,6 +96,11 @@ Backend runs at:
 
 
 Frontend runs at:
+
+cd frontend
+cd vite-project
+npm install
+npm run dev
 
 👉 **http://localhost:5173**
 
