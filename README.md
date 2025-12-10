@@ -74,6 +74,12 @@ cd Assignment
 
 # 🛠 Backend Setup
 
+ ```sh
+cd backend \
+npm install \
+npm run dev
+```
+
 Backend runs at:
 
 👉 **http://localhost:5000**
@@ -90,6 +96,12 @@ Backend runs at:
 
 # 🎨 Frontend Setup
 
+ ```sh
+cd frontend \
+cd vite-project \
+npm install \
+npm run dev
+ ```
 
 Frontend runs at:
 
@@ -124,6 +136,93 @@ GET /documents/:id
 ### **Delete a document**
 
 DELETE /documents/:id
+
+## 🧪 Example API Calls (cURL & Postman)
+
+Below are example requests you can use to test the backend APIs.
+
+---
+
+### 📤 1. Upload a PDF
+
+#### cURL
+```sh
+curl -X POST http://localhost:5000/documents/upload \
+  -H "Content-Type: multipart/form-data" \
+  -F "file=@yourfile.pdf"
+```
+
+1- Open Postman
+
+2- Create a POST request: http://localhost:5000/documents/upload
+
+3- Go to Body → form-data
+
+4- Add a field:
+
+         Key: file
+         Type: File
+         Select: any PDF
+
+5- Click Send
+
+### 📄 2. Get All Documents
+
+  #### cURL
+  ```sh
+   curl http://localhost:5000/documents
+  ```
+
+   Postman
+
+  1- Method: GET
+
+  2- URL: http://localhost:5000/documents
+
+  3- Click Send
+
+       You will receive a JSON list of uploaded documents.
+
+ ### 📥 3. Download a Document
+
+   #### cURL
+  ```sh
+   curl -X GET http://localhost:5000/documents/1 -o downloaded.pdf
+  ```
+  
+  Postman
+
+  1- Method: GET
+
+  2- URL: http://localhost:5000/documents/:id
+
+  3- Click Send
+
+  4- Postman will download the PDF file.
+
+ ### 🗑 4. Delete a Document
+
+  #### cURL
+  ```sh
+  curl -X DELETE http://localhost:5000/documents/1
+  ```
+
+  Postman
+
+  1- Method: DELETE
+
+  2- URL: http://localhost:5000/documents/:id
+
+  3- Click Send
+
+     A success message will appear:
+
+    { "message": "Document deleted successfully" }
+
+
+    
+
+
 
 
 
