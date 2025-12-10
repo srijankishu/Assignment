@@ -1,0 +1,132 @@
+# Patient Document Portal  
+A simple full-stack application that allows users to upload, view, download, and delete medical PDF documents.  
+Built as part of a Full Stack Developer Intern assignment.
+
+---
+
+##  Tech Stack
+
+### **Frontend**
+- React (Vite)
+- Axios
+- Tailwind CSS (optional but supported)
+
+### **Backend**
+- Node.js + Express
+- Multer (file upload)
+- Sequelize ORM
+- SQLite database
+
+### **Storage**
+- Local folder `uploads/` for storing PDFs  
+- SQLite file `database.sqlite` for document metadata
+
+---
+
+## 📁 Project Structure
+
+.
+├── backend
+│ ├── src
+│ │ ├── index.js
+│ │ ├── routes/
+│ │ ├── controllers/
+│ │ ├── models/
+│ │ ├── config/
+│ │ └── uploads/ ← stored PDFs
+│ └── package.json
+│
+├── frontend
+│ ├── src/
+│ ├── package.json
+│ └── vite.config.js
+│
+├── design.md
+└── README.md
+
+
+---
+
+## 🗄 Database Schema
+
+Table: **documents**
+
+| Field       | Type       | Description                   |
+|-------------|-----------|-------------------------------|
+| id          | INTEGER PK | Auto-increment ID             |
+| filename    | STRING     | Saved filename                |
+| filepath    | STRING     | File path inside uploads/     |
+| filesize    | INTEGER    | Size in bytes                 |
+| created_at  | DATE       | Upload timestamp              |
+
+---
+
+# ⚙️ Setup Instructions
+
+## 1️⃣ Clone the Repository
+
+git clone https://github.com/srijankishu/Assignment.git
+cd your-repo-folder
+
+---
+
+# 🛠 Backend Setup
+
+Backend runs at:
+
+👉 **http://localhost:5000**
+
+### ✔ Backend Features
+- Upload PDFs
+- List all uploaded documents
+- View PDF (open in browser tab)
+- Download PDF
+- Delete PDF
+- Stores file metadata in SQLite
+
+---
+
+# 🎨 Frontend Setup
+
+
+Frontend runs at:
+
+👉 **http://localhost:5173**
+
+### ✔ Frontend Features
+- PDF upload form (with validation)
+- Display uploaded files
+- View PDF (opens in new tab)
+- Download PDF
+- Delete PDF
+- Auto-refresh document list
+
+---
+
+# 🔌 API Endpoints
+
+### **Upload PDF**
+
+POST /documents/upload
+Content-Type: multipart/form-data
+file: <PDF file>
+
+### **Get all documents**
+
+GET /documents
+
+### **Download a document**
+
+GET /documents/:id
+
+### **Delete a document**
+
+DELETE /documents/:id
+
+
+
+
+
+
+
+
