@@ -24,7 +24,7 @@ Built as part of a Full Stack Developer Intern assignment.
 ---
 
 ## 📁 Project Structure
-
+```
 .
 ├── backend
 │ ├── src
@@ -44,7 +44,7 @@ Built as part of a Full Stack Developer Intern assignment.
 ├── design.md
 └── README.md
 
-
+```
 ---
 
 ## 🗄 Database Schema
