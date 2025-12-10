@@ -146,6 +146,7 @@ Below are example requests you can use to test the backend APIs.
 curl -X POST http://localhost:5000/documents/upload \
   -H "Content-Type: multipart/form-data" \
   -F "file=@yourfile.pdf"
+```
 
 1-Open Postman
 
@@ -161,9 +162,13 @@ curl -X POST http://localhost:5000/documents/upload \
 
 5- Click Send
 
-2. Get All Documents
-   cURL
+### 2. Get All Documents
+
+  #### cURL
+  ```sh
    curl http://localhost:5000/documents
+   #### cURL
+  ```
 
    Postman
 
@@ -175,11 +180,14 @@ curl -X POST http://localhost:5000/documents/upload \
 
        You will receive a JSON list of uploaded documents.
 
- 3. Download a Document
+ ### 3. Download a Document
 
-    cURL
-    curl -X GET http://localhost:5000/documents/1 -o downloaded.pdf
-
+   #### cURL
+  ```sh
+   curl -X GET http://localhost:5000/documents/1 -o downloaded.pdf
+   #### cURL
+  ```
+  
     Postman
 
      1-Method: GET
@@ -192,19 +200,22 @@ curl -X POST http://localhost:5000/documents/upload \
 
 4. Delete a Document
 
-cURL 
-curl -X DELETE http://localhost:5000/documents/1
+  #### cURL
+  ```sh
+  curl -X DELETE http://localhost:5000/documents/1
+   #### cURL
+  ```
 
-Postman
+    Postman
 
-Method: DELETE
+    Method: DELETE
 
-URL: http://localhost:5000/documents/<id>
+    URL: http://localhost:5000/documents/<id>
 
-Click Send
-A success message will appear:
+    Click Send
+    A success message will appear:
 
-{ "message": "Document deleted successfully" }
+    { "message": "Document deleted successfully" }
 
 
     
