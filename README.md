@@ -41,8 +41,8 @@ Built as part of a Full Stack Developer Intern assignment.
 │ ├── package.json
 │ └── vite.config.js
 │
-├── design.md
-└── README.md
+├── README.md
+└── design.md
 
 ```
 ---
